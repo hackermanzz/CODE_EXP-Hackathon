@@ -215,12 +215,12 @@ label {
 }
 
 .login-btm {
-    float: left;
+    text-align: left;
+    margin-right: auto;
 }
 
 .login-button {
-    padding-right: 0px;
-    text-align: right;
+    margin-left: auto;
     margin-bottom: 25px;
 }
 
