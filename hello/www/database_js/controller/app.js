@@ -37,3 +37,38 @@ app.get('/api/counsellor/:username',function (req,res){
         }
     })
 })
+
+//To add a new user
+app.post('api/user',function(req,res){
+    var username = req.body.username
+    var fullname = req.body.fullname
+    var password = req.body.password
+
+    api.newUser(username,fullname,password,function(err,result){
+        if(!err){
+            console.log(result)
+            res.send(result + ' record inserted')
+        }
+        else{
+            res.send(err.statusCode)
+        }
+    })
+})
+
+//To add a new counsellor
+app.post('api/counsellor',function(req,res){
+    var username = req.body.username
+    var fullname = req.body.fullname
+    var password = req.body.password
+    var organization = req.body.organization
+
+    api.newCounsellor(username,fullname,password,organization,function(err,result){
+        if(!err){
+            console.log(result)
+            res.send(result + ' record inserted')
+        }
+        else{
+            res.send(err.statusCode)
+        }
+    })
+})
